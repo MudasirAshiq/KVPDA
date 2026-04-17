@@ -12,7 +12,7 @@ interface ImportCSVModalProps {
 }
 
 const ImportCSVModal: React.FC<ImportCSVModalProps> = ({ isOpen, onClose, onImportSuccess }) => {
-    const [file, setFile] = useState<File | null>(null);
+
     const [parsedData, setParsedData] = useState<any[]>([]);
     const [error, setError] = useState('');
     const [isProcessing, setIsProcessing] = useState(false);
@@ -21,11 +21,10 @@ const ImportCSVModal: React.FC<ImportCSVModalProps> = ({ isOpen, onClose, onImpo
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const selectedFile = e.target.files?.[0];
         if (selectedFile && selectedFile.type === 'text/csv') {
-            setFile(selectedFile);
             setError('');
             parseCSV(selectedFile);
         } else {
-            setFile(null);
+
             setParsedData([]);
             setError('Please select a valid .csv file.');
         }
@@ -72,7 +71,7 @@ const ImportCSVModal: React.FC<ImportCSVModalProps> = ({ isOpen, onClose, onImpo
     };
 
     const handleClose = () => {
-        setFile(null);
+
         setParsedData([]);
         setError('');
         setImportResult(null);

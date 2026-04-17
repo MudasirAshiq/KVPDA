@@ -5,7 +5,7 @@ import Button from '../common/Button';
 import { api } from '../../services/api';
 import Alert from '../common/Alert';
 import { formatDate, toInputDateString } from '../../utils/helpers';
-import Badge from '../common/Badge';
+
 
 interface EmployeeFormProps {
   employee: Employee | null;
