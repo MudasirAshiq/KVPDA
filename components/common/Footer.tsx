@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button';
+
 
 const WhatsAppIcon = () => (
     <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="currentColor">
@@ -16,12 +16,12 @@ const Footer: React.FC = () => {
             <div className="mt-1">
                 <span className="text-gray-400">Designed by </span>
                 <a 
-                    href="https://abaliqa.com" 
+                    href="https://codefons.com" 
                     target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="font-medium text-gray-600 hover:text-primary transition-colors"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-3 py-1 bg-primary/10 text-primary font-bold rounded-full hover:bg-primary hover:text-white transition-all transform hover:scale-105 ml-1"
                 >
-                    Abaliqa Technologies
+                    CodeFONS
                 </a>
             </div>
         </div>

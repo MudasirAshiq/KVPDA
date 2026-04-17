@@ -118,7 +118,7 @@ export const api = {
   },
   
   updateUserProfile: async (userId: UUID, data: { name: string; username: string }): Promise<User> => {
-      const updated = await sqlSingle(
+      await sqlSingle(
           `UPDATE users SET name = $1, username = $2 WHERE id = $3 RETURNING *`,
           [data.name, data.username, userId]
       );
