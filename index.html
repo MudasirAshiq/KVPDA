@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KVPDA Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#1D4ED8', // A nice blue
+              'secondary': '#64748B',
+              'accent': '#F59E0B',
+              'background': '#F8FAFC',
+              'surface': '#FFFFFF',
+              'danger': '#DC2626',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Global override for Autofill styles to ensure White Background and Black Text */
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover, 
+      input:-webkit-autofill:focus, 
+      input:-webkit-autofill:active,
+      textarea:-webkit-autofill,
+      textarea:-webkit-autofill:hover,
+      textarea:-webkit-autofill:focus,
+      textarea:-webkit-autofill:active,
+      select:-webkit-autofill,
+      select:-webkit-autofill:hover,
+      select:-webkit-autofill:focus,
+      select:-webkit-autofill:active {
+          -webkit-box-shadow: 0 0 0 30px white inset !important;
+          -webkit-text-fill-color: black !important;
+          background-color: white !important;
+          color: black !important;
+          transition: background-color 5000s ease-in-out 0s;
+      }
+      /* Force calendar icon to be visible on date inputs */
+      input[type="date"]::-webkit-calendar-picker-indicator {
+            display: block;
+            opacity: 1;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%236B7280" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>') no-repeat;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+      }
+    </style>
+    <!-- Polyfill for Buffer (Required by Neon/Postgres driver) -->
+    <script src="https://cdn.jsdelivr.net/npm/buffer@6.0.3/index.min.js"></script>
+    <script>
+      // Polyfills for Node.js globals required by some libraries
+      window.global = window;
+      window.process = { env: { NODE_ENV: 'development' } };
+      // Ensure Buffer is available globally
+      if (window.buffer && !window.Buffer) {
+        window.Buffer = window.buffer.Buffer;
+      }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.2",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.0",
+    "@neondatabase/serverless": "https://cdn.jsdelivr.net/npm/@neondatabase/serverless@0.9.0/+esm",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="h-full">
+    <div id="root" class="h-full"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

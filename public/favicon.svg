@@ -1,0 +1,24 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="goldGradient" cx="50%" cy="40%" r="50%" fx="30%" fy="30%">
+      <stop offset="0%" style="stop-color:#FDE68A;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#D97706;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#92400E;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  <!-- The Teardrop Shape -->
+  <path d="M256 32C256 32 128 224 128 352C128 422.69 185.31 480 256 480C326.69 480 384 422.69 384 352C384 224 256 32 256 32Z" fill="url(#goldGradient)" />
+  
+  <!-- Internal Shine/Reflection -->
+  <path d="M256 64C256 64 160 224 160 352C160 405.01 202.99 448 256 448C309.01 448 352 405.01 352 352C352 224 256 64 256 64Z" fill="url(#shine)" opacity="0.4" />
+
+  <!-- Top Highlight for 3D effect -->
+  <ellipse cx="220" cy="280" rx="25" ry="50" transform="rotate(-30 220 280)" fill="white" fill-opacity="0.4" />
+  
+  <!-- Small Bottom Reflection -->
+  <path d="M210 430Q256 450 302 430" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.3" fill="none" />
+</svg>

@@ -1,0 +1,5 @@
+{
+  "name": "KVPDA",
+  "description": "A secure portal for members of the Kashmir Petroleum Dealers Association to manage employees, customers, and search the shared union registry.",
+  "requestFramePermissions": []
+}
